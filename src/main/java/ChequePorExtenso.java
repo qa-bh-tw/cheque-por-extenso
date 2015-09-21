@@ -17,16 +17,18 @@ public class ChequePorExtenso {
 
         String valorPorExtenso = "";
 
-        if(valor < 10 ) {
+        if (valor ==1){
+            valorPorExtenso = unidades[valor] + " Real" ;
+        }else if(valor > 1 && valor < 10 ) {
             valorPorExtenso = unidades[valor];
         } else if (valor > 9 && valor < 20) {
             indice = valor - 10;
             valorPorExtenso = dezEdezenas[indice];
         } else if(valor == 20) {
-            valorPorExtenso = "Vinte";
+            valorPorExtenso = dezenas[2];
         } else if (valor > 20 && valor < 30) {
             indice = valor - 20;
-            valorPorExtenso = "Vinte e " + unidades[indice];
+            valorPorExtenso = dezenas[2] +" e " + unidades[indice];
         }
 
 

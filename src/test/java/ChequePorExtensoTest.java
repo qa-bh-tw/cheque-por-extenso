@@ -10,7 +10,7 @@ public class ChequePorExtensoTest {
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso, "Um");
+        Assert.assertEquals(extenso, "Um Real");
     }
 
     @Test
