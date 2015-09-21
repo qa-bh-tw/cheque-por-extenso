@@ -15,7 +15,14 @@ public class ChequePorExtenso {
 
         if(valor <= 19 ) {
             valorPorExtenso = unidades[valor];
-        } else {
+        }
+        else if (valor > 20 && valor <30)
+        {
+            int indice = valor - 20;
+            valorPorExtenso = "Vinte e " + unidades[indice];
+        }
+
+        else {
             valorPorExtenso = "Vinte";
         }
 
