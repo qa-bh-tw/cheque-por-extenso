@@ -64,5 +64,15 @@ public class ChequePorExtensoTest {
         Assert.assertEquals(extenso, "Vinte e Cinco Reais");
     }
 
+    @Test
+    public void retornaTrintaETresPorExtenso() {
+        int valor = 33;
+
+        ChequePorExtenso cheque = new ChequePorExtenso();
+        String extenso = cheque.getValorPorExtenso(valor);
+
+        Assert.assertEquals(extenso, "Trinta e Três Reais");
+    }
+
 
 }

@@ -27,13 +27,12 @@ public class ChequePorExtenso {
         } else if (valor > 9 && valor < 20) {
             indice = valor - 10;
             valorPorExtenso = dezEdezenas[indice] + REAIS;
-        } else if (valor == 20) {
-            valorPorExtenso = dezenas[2] + REAIS;
-        } else if (valor > 20 && valor < 30) {
-            indice = valor - 20;
-            valorPorExtenso = dezenas[2] + " e " + unidades[indice] + REAIS;
+        } else if (valor % 10 == 0) {
+            valorPorExtenso = dezenas[valor/10] + REAIS;
+        } else if (valor > 20 && valor < 100) {
+            indice = valor % 10;
+            valorPorExtenso = dezenas[valor/10] + " e " + unidades[indice] + REAIS;
         }
-
 
         return valorPorExtenso;
     }
