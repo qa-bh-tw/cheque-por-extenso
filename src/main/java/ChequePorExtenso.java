@@ -5,26 +5,30 @@ public class ChequePorExtenso {
 
     public String getValorPorExtenso(int valor) {
 
+        int indice;
+
         String unidades[]={"Zero","Um","Dois","Três","Quatro","Cinco","Seis","Sete","Oito",
-                "Nove","Dez","Onze","Doze","Treze","Quatorze","Quinze","Dezesseis","Dezessete",
+                "Nove"};
+
+        String dezEdezenas[]={"Dez","Onze","Doze","Treze","Quatorze","Quinze","Dezesseis","Dezessete",
                 "Dezoito","Dezenove"};
 
         String dezenas[]={"","","Vinte","Trinta","Quarenta","Cinquenta","Sessenta","Setenta","Oitenta","Noventa"};
 
         String valorPorExtenso = "";
 
-        if(valor <= 19 ) {
+        if(valor < 10 ) {
             valorPorExtenso = unidades[valor];
-        }
-        else if (valor > 20 && valor <30)
-        {
-            int indice = valor - 20;
+        } else if (valor > 9 && valor < 20) {
+            indice = valor - 10;
+            valorPorExtenso = dezEdezenas[indice];
+        } else if(valor == 20) {
+            valorPorExtenso = "Vinte";
+        } else if (valor > 20 && valor < 30) {
+            indice = valor - 20;
             valorPorExtenso = "Vinte e " + unidades[indice];
         }
 
-        else {
-            valorPorExtenso = "Vinte";
-        }
 
         return valorPorExtenso;
     }
