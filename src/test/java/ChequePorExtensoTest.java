@@ -20,7 +20,7 @@ public class ChequePorExtensoTest {
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso, "Dois");
+        Assert.assertEquals(extenso, "Dois Reais");
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ChequePorExtensoTest {
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso, "Três");
+        Assert.assertEquals(extenso, "Três Reais");
 
     }
 
@@ -41,7 +41,7 @@ public class ChequePorExtensoTest {
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso,"Doze");
+        Assert.assertEquals(extenso,"Doze Reais");
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ChequePorExtensoTest {
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso,"Vinte");
+        Assert.assertEquals(extenso,"Vinte Reais");
     }
 
     @Test
@@ -61,7 +61,7 @@ public class ChequePorExtensoTest {
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso,"Vinte e Cinco");
+        Assert.assertEquals(extenso,"Vinte e Cinco Reais");
     }
 
 
