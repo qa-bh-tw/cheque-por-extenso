@@ -24,8 +24,8 @@ public class ChequePorExtensoTest {
     }
 
     @Test
-    public void retornaTresPorExtenso(){
-        int valor= 3;
+    public void retornaTresPorExtenso() {
+        int valor = 3;
 
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
@@ -35,33 +35,33 @@ public class ChequePorExtensoTest {
     }
 
     @Test
-    public void retornaDozePorExtenso(){
+    public void retornaDozePorExtenso() {
         int valor = 12;
 
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso,"Doze Reais");
+        Assert.assertEquals(extenso, "Doze Reais");
     }
 
     @Test
-    public void retornaVintePorExtenso(){
+    public void retornaVintePorExtenso() {
         int valor = 20;
 
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso,"Vinte Reais");
+        Assert.assertEquals(extenso, "Vinte Reais");
     }
 
     @Test
-    public void retornaVinteEcincoPorExtenso(){
+    public void retornaVinteEcincoPorExtenso() {
         int valor = 25;
 
         ChequePorExtenso cheque = new ChequePorExtenso();
         String extenso = cheque.getValorPorExtenso(valor);
 
-        Assert.assertEquals(extenso,"Vinte e Cinco Reais");
+        Assert.assertEquals(extenso, "Vinte e Cinco Reais");
     }
 
 
