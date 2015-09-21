@@ -3,6 +3,9 @@
  */
 public class ChequePorExtenso {
 
+    public static final String REAIS = " Reais";
+    public static final String REAL = " Real";
+
     public String getValorPorExtenso(int valor) {
 
         int indice;
@@ -18,18 +21,20 @@ public class ChequePorExtenso {
         String valorPorExtenso = "";
 
         if (valor ==1){
-            valorPorExtenso = unidades[valor] + " Real";
+            valorPorExtenso = unidades[valor] + REAL;
         }else if(valor > 1 && valor < 10 ) {
-            valorPorExtenso = unidades[valor] + " Reais";
+            valorPorExtenso = unidades[valor] + REAIS;
         } else if (valor > 9 && valor < 20) {
             indice = valor - 10;
-            valorPorExtenso = dezEdezenas[indice] + " Reais";
+            valorPorExtenso = dezEdezenas[indice] + REAIS;
         } else if(valor == 20) {
-            valorPorExtenso = dezenas[2] + " Reais";
+            valorPorExtenso = dezenas[2] + REAIS;
         } else if (valor > 20 && valor < 30) {
             indice = valor - 20;
-            valorPorExtenso = dezenas[2] +" e " + unidades[indice] + " Reais";
+            valorPorExtenso = dezenas[2] +" e " + unidades[indice] + REAIS;
         }
+
+
 
 
         return valorPorExtenso;
