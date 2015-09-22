@@ -1,6 +1,3 @@
-/**
- * Created by nmoura on 9/14/15.
- */
 public class ChequePorExtenso {
 
     public static final String REAIS = " Reais";
@@ -42,13 +39,7 @@ public class ChequePorExtenso {
     }
 
     private String sufixoPara(final int valor) {
-        String sufixo = "";
-        if (valor == 1) {
-            sufixo =  REAL;
-        } else {
-            sufixo =  REAIS;
-        }
-        return sufixo;
+        return valor == 1 ? REAL : REAIS;
     }
 
 }
