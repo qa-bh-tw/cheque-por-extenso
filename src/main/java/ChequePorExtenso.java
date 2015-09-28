@@ -33,20 +33,27 @@ public class ChequePorExtenso {
         } else if (valor > 9 && valor < 20) {
             indice = valor - 10;
             valorPorExtenso = dezEdezenas[indice];
-        } else if (valor % 10 == 0 && valor < 100) {
+        } else if (ehDezenaRedonda(valor) && valor < 100) {
             valorPorExtenso = dezenas[valor / 10];
         } else if (valor > 20 && valor < 100) {
             valorPorExtenso = dezenas[indiceDezenas] + " e " + unidades[indiceUnidades];
         } else if (valor == 100) {
             valorPorExtenso = CEM;
-        } else if (valor > 100){
+        } else if (valor > 100 && valor < 110) {
             valorPorExtenso = centenas[indiceCentenas] + " e " + unidades[indiceUnidades];
+        } else if (valor == 110) {
+            indice = valor - 110;
+            valorPorExtenso = centenas[indiceCentenas] + " e " + dezEdezenas[indice];
         }
 
         valorPorExtenso += sufixoPara(valor);
 
         return valorPorExtenso;
 
+    }
+
+    private boolean ehDezenaRedonda(int valor) {
+        return valor % 10 == 0;
     }
 
     private String sufixoPara(final int valor) {
