@@ -11,39 +11,35 @@ public class ChequePorExtenso {
         int indiceDezenas = valor / 10;
         int indiceCentenas = valor / 100;
 
-        String unidades[] = {"Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito",
-                "Nove"};
-
-        String dezEdezenas[] = {"Dez", "Onze", "Doze", "Treze", "Quatorze", "Quinze", "Dezesseis", "Dezessete",
+        String menoresQueVinte[] = {"Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito",
+                "Nove", "Dez", "Onze", "Doze", "Treze", "Quatorze", "Quinze", "Dezesseis", "Dezessete",
                 "Dezoito", "Dezenove"};
 
         String dezenas[] = {"", "", "Vinte", "Trinta", "Quarenta", "Cinquenta", "Sessenta", "Setenta", "Oitenta",
                 "Noventa"};
 
-        String centenas[] = {"","Cento", "Duzentos", "Trezentos", "Quatrocentos", "Quinhentos", "Seiscentos",
+        String centenas[] = {"", "Cento", "Duzentos", "Trezentos", "Quatrocentos", "Quinhentos", "Seiscentos",
                 "Setecentos", "Oitocentos", "Novecentos"};
 
         String valorPorExtenso = "";
 
-
-        if (valor == 0 || valor == 1) {
-            valorPorExtenso = unidades[valor];
-        } else if (valor > 1 && valor < 10) {
-            valorPorExtenso = unidades[valor];
-        } else if (valor > 9 && valor < 20) {
-            indice = valor - 10;
-            valorPorExtenso = dezEdezenas[indice];
-        } else if (ehDezenaRedonda(valor) && valor < 100) {
-            valorPorExtenso = dezenas[valor / 10];
-        } else if (valor > 20 && valor < 100) {
-            valorPorExtenso = dezenas[indiceDezenas] + " e " + unidades[indiceUnidades];
-        } else if (valor == 100) {
-            valorPorExtenso = CEM;
-        } else if (valor > 100 && valor < 110) {
-            valorPorExtenso = centenas[indiceCentenas] + " e " + unidades[indiceUnidades];
-        } else if (valor == 110) {
-            indice = valor - 110;
-            valorPorExtenso = centenas[indiceCentenas] + " e " + dezEdezenas[indice];
+        if (valor < 100) {
+            if (valor >= 0 && valor < 20) {
+                valorPorExtenso = menoresQueVinte[valor];
+            } else if (ehDezenaRedonda(valor) && valor < 100) {
+                valorPorExtenso = dezenas[valor / 10];
+            } else if (valor > 20 && valor < 100) {
+                valorPorExtenso = dezenas[indiceDezenas] + " e " + menoresQueVinte[indiceUnidades];
+            }
+        } else if (valor >= 100) {
+            if (valor == 100) {
+                valorPorExtenso = CEM;
+            } else if (valor > 100 && valor < 110) {
+                valorPorExtenso = centenas[indiceCentenas] + " e " + menoresQueVinte[indiceUnidades];
+            } else if (valor == 110) {
+                indice = valor - 100;
+                valorPorExtenso = centenas[indiceCentenas] + " e " + menoresQueVinte[indice];
+            }
         }
 
         valorPorExtenso += sufixoPara(valor);
