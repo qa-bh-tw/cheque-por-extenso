@@ -98,4 +98,20 @@ public class SeparadorDeValoresTest {
         assertEquals(centena, 0);
     }
 
+    @Test
+    public void centenaDe1230eh0() {
+        int centena = separadorDeValores.centenasEm(1230);
+
+        assertEquals(centena, 2);
+    }
+
+    @Test
+    public void centenaDe30eh0() {
+        int centena = separadorDeValores.centenasEm(30);
+
+        assertEquals(centena, 0);
+    }
+
+
+
 }
