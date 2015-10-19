@@ -8,6 +8,6 @@ public class SeparadorDeValores {
     }
 
     public int centenasEm(int valor) {
-        return valor/ CEM;
+        return valor%MIL/CEM;
     }
 }
