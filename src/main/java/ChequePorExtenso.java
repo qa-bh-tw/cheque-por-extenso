@@ -30,7 +30,7 @@ public class ChequePorExtenso {
             if (valor == 100) {
                 valorPorExtenso = CEM;
             } else if (valor > 100 && valor < 110) {
-                valorPorExtenso = centenas[indiceCentenas] + " e " + menoresQueVinte[indiceUnidades];
+                valorPorExtenso = centenas[retornaCentenas(valor)] + " e " + menoresQueVinte[indiceUnidades];
             } else if (valor == 110) {
                 indice = valor - 100;
                 valorPorExtenso = centenas[indiceCentenas] + " e " + menoresQueVinte[indice];
@@ -55,6 +55,10 @@ public class ChequePorExtenso {
             valorPorExtenso = dezenas[indiceDezenas] + " e " + menoresQueVinte[indiceUnidades];
         }
         return valorPorExtenso;
+    }
+
+    private int retornaCentenas(int valor){
+        return valor/100;
     }
 
     private boolean ehDezenaRedonda(int valor) {
